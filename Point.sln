@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Point", "Point\Point.csproj", "{68BFD9A9-59FA-43B8-BF75-7A84DEF0F9D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointTesting", "PointTesting\PointTesting.csproj", "{3D0DA8A1-4F94-4D95-981E-F624E172F833}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68BFD9A9-59FA-43B8-BF75-7A84DEF0F9D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68BFD9A9-59FA-43B8-BF75-7A84DEF0F9D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68BFD9A9-59FA-43B8-BF75-7A84DEF0F9D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68BFD9A9-59FA-43B8-BF75-7A84DEF0F9D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D0DA8A1-4F94-4D95-981E-F624E172F833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D0DA8A1-4F94-4D95-981E-F624E172F833}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D0DA8A1-4F94-4D95-981E-F624E172F833}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D0DA8A1-4F94-4D95-981E-F624E172F833}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB7599E2-195E-4AEA-BBA5-78365B2D9E4B}
+	EndGlobalSection
+EndGlobal
