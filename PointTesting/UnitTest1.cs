@@ -56,15 +56,15 @@ namespace PointTesting
             Assert.AreEqual(expected, result, 0.01);
         }
 
-        //[Test]
-        //public void TestVectorTo()
-        //{
-        //    Point TestPointA = new Point(2, 4);
-        //    Point TestPointB = new Point(20, 10);
-        //    Point expected = 
-        //    double result = TestPointA.Distance(TestPointB);
-        //    Assert.AreEqual(expected, result, 0.01);
-        //}
+        [Test]
+        public void TestVectorTo()
+        {
+            Point TestPointA = new Point(2, 4);
+            Point expected = new Point(8, 12);
+            TestPointA.vectorTo(expected);
+
+            Assert.AreEqual(expected.Y(), TestPointA.Y());
+        }
 
         [Test]
         public void TestTranslate()
