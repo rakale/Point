@@ -7,16 +7,19 @@ namespace IDU.Point
     {
         static void Main(string[] args)
         {
-            Point A = new Point(5, 10);
-            Console.WriteLine(A.Y());
-            Point B = new Point(10, 25.4);
-            Console.WriteLine(A.X());
-            Console.WriteLine(A.Theta());
-            Console.WriteLine(A.Distance(B));
+            Point A = new Point(10, 20);
+            Point B = new Point(-20, 60);
+            Point C = new Point(15,0);
 
-            A.Centre_Rotate(0.5);
-            Console.WriteLine(A.X());
-            Console.WriteLine(A.Y());
+
+            Console.WriteLine(A.Distance(B));
+            C.Centre_Rotate(Math.PI/3);
+
+            Console.WriteLine(C.X());
+            Console.WriteLine(C.Y());
+            Console.WriteLine(C.Rho());
+            Console.WriteLine(C.Theta());
+            Console.ReadLine();
 
             Console.ReadLine();
         }
@@ -67,7 +70,7 @@ namespace IDU.Point
         //Returns the Point representing the vector from self to other Point
         public Point vectorTo(Point other)
         {
-            return new Point(other.X() - X(), other.Y() - Y());
+            return new Point(other.X() - this.X(), other.Y() - this.Y());
         }
 
         //Move by dx horizontally, dy vertically
@@ -75,7 +78,6 @@ namespace IDU.Point
         {
             x += moveX;
             y += moveY;
-            Console.WriteLine(x.ToString() + " " + y.ToString());
         }
 
         //Scale by factor
@@ -83,7 +85,6 @@ namespace IDU.Point
         {
             x *= factor;
             y *= factor;
-            Console.WriteLine(x.ToString() + " " + y.ToString());
         }
 
         //Rotate around origin (0, 0) by angle
@@ -93,6 +94,13 @@ namespace IDU.Point
             double tempY = Rho() * Math.Sin(Theta() + angle);
             x = tempX;
             y = tempY;
+        }
+
+        public void Rotate(Point p, double angle)
+        {
+            this.Translate(-p.X(), -p.Y());
+            this.Centre_Rotate(angle);
+            this.Translate(p.X(),p.Y());
         }
 
     }
