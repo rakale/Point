@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Point", "Point\Point.csproj", "{68BFD9A9-59FA-43B8-BF75-7A84DEF0F9D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointTesting", "PointTesting\PointTesting.csproj", "{3D0DA8A1-4F94-4D95-981E-F624E172F833}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointTesting", "PointTesting\PointTesting.csproj", "{3D0DA8A1-4F94-4D95-981E-F624E172F833}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouteTesting", "RouteTesting\RouteTesting.csproj", "{66315E96-D0C5-436F-A7E0-7038B329FCC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{3D0DA8A1-4F94-4D95-981E-F624E172F833}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D0DA8A1-4F94-4D95-981E-F624E172F833}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D0DA8A1-4F94-4D95-981E-F624E172F833}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66315E96-D0C5-436F-A7E0-7038B329FCC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66315E96-D0C5-436F-A7E0-7038B329FCC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66315E96-D0C5-436F-A7E0-7038B329FCC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66315E96-D0C5-436F-A7E0-7038B329FCC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 
 namespace IDU.Point
@@ -7,16 +10,19 @@ namespace IDU.Point
     {
         static void Main(string[] args)
         {
-            Point A = new Point(5, 10);
-            Console.WriteLine(A.Y());
-            Point B = new Point(10, 25.4);
-            Console.WriteLine(A.X());
-            Console.WriteLine(A.Theta());
-            Console.WriteLine(A.Distance(B));
+            Route first = new Route();
 
-            A.Centre_Rotate(0.5);
-            Console.WriteLine(A.X());
-            Console.WriteLine(A.Y());
+            first.add_point(2, 4, 0);
+            
+            first.add_point(4, 8, 1);
+            first.add_point(2132, 1234, 2);
+            first.add_point(2132, 1, 3);
+            first.add_point(123, 1, 4);
+
+            first.get_length();
+
+            first.remove_point(2);
+            first.get_length();
 
             Console.ReadLine();
         }
@@ -34,6 +40,11 @@ namespace IDU.Point
         public double x;
         public double y;
 
+        public string printInfo()
+        {
+            Console.WriteLine("X:" + x + " Y:" + y);
+            return null;
+        }
         //abscissa
         public double X()
         {
@@ -61,6 +72,7 @@ namespace IDU.Point
         //distance to other
         public double Distance(Point other)
         {
+            Console.WriteLine(vectorTo(other).Rho());
             return vectorTo(other).Rho();
         }
 
@@ -95,5 +107,45 @@ namespace IDU.Point
             y = tempY;
         }
 
+    }
+
+    public class Route
+    {
+        public List<Point> points;
+
+        public Route()
+        {
+            points = new List<Point>();
+        }
+
+        public void add_point(double x, double y, int index)
+        {
+            points.Insert(index,new Point(x, y));
+            Console.WriteLine("Added point(" + x + "," + y + ") at an index of " + index);
+        }
+
+        public void remove_point(int index)
+        {
+            points.RemoveAt(index);
+            foreach(Point e in points)
+            {
+                Console.WriteLine(e.printInfo());
+            }
+        }
+
+        public void get_length()
+        {
+            List<double> totalDist = new List<double>();
+            for (int i = 0; i <= points.Count; i++)
+            {
+                if(i == points.Count - 1)
+                {
+                    double sum = totalDist.Sum();
+                    Console.WriteLine(sum);
+                    return;
+                }
+               else totalDist.Add(points[i].Distance(points[i + 1]));
+            }
+        }
     }
 }
