@@ -11,13 +11,14 @@ namespace IDU.Point
         static void Main(string[] args)
         {
             Route first = new Route();
+            
 
             first.add_point(2, 4, 0);
             
-            first.add_point(4, 8, 1);
-            first.add_point(2132, 1234, 2);
-            first.add_point(2132, 1, 3);
-            first.add_point(123, 1, 4);
+            //first.add_point(4, 8, 1);
+           // first.add_point(2132, 1234, 2);
+            //first.add_point(2132, 1, 3);
+            //first.add_point(123, 1, 4);
 
             first.get_length();
 
@@ -107,6 +108,13 @@ namespace IDU.Point
             y = tempY;
         }
 
+        public void Rotate(Point p, double angle)
+        {
+            this.Translate(-p.X(), -p.Y());
+            this.Centre_Rotate(angle);
+            this.Translate(p.X(),p.Y());
+        }
+
     }
 
     public class Route
@@ -126,14 +134,18 @@ namespace IDU.Point
 
         public void remove_point(int index)
         {
-            points.RemoveAt(index);
+            if(points.Count > 1)
+            {
+                points.RemoveAt(index);
+            }
+            
             foreach(Point e in points)
             {
                 Console.WriteLine(e.printInfo());
             }
         }
 
-        public void get_length()
+        public double get_length()
         {
             List<double> totalDist = new List<double>();
             for (int i = 0; i <= points.Count; i++)
@@ -142,10 +154,11 @@ namespace IDU.Point
                 {
                     double sum = totalDist.Sum();
                     Console.WriteLine(sum);
-                    return;
+                    return sum;
                 }
                else totalDist.Add(points[i].Distance(points[i + 1]));
             }
+            return 0;
         }
     }
 }
