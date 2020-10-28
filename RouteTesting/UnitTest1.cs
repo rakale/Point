@@ -14,6 +14,12 @@ namespace RouteTesting
         }
 
         [Test]
+        public void TestCreateRoute()
+        {
+            Assert.IsNotNull(route);
+        }
+
+        [Test]
         public void TestAddPoint()
         {
             route.add_point(2, 4, 0);
